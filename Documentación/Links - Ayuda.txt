@@ -1,1 +1,8 @@
 https://riull.ull.es/xmlui/bitstream/handle/915/5119/JITRAX%20Interprete%20en%20Java%20para%20Algebra%20Relacional.pdf?sequence=1
+
+Tutorial JDBC:
+https://docs.oracle.com/javase/tutorial/jdbc/index.html
+
+https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
+
+https://www.adictosaltrabajo.com/tutoriales/tutorial-basico-jdbc/

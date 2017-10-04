@@ -78,7 +78,7 @@ public class Op_Proyeccion extends javax.swing.JFrame {
         butRegresar.setText("Regresar");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Proyeccion");
+        jLabel4.setText("PROYECCION");
 
         jButton1.setText("Cerrar Sesión");
 
