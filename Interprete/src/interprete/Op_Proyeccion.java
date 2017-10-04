@@ -68,6 +68,11 @@ public class Op_Proyeccion extends javax.swing.JFrame {
         jLabel2.setText("Tabla");
 
         butComprobar.setText("Generar Consulta");
+        butComprobar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butComprobarMouseClicked(evt);
+            }
+        });
 
         jTextAlgebra.setColumns(20);
         jTextAlgebra.setRows(5);
@@ -194,6 +199,19 @@ public class Op_Proyeccion extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_butSalirActionPerformed
 
+    private void butComprobarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butComprobarMouseClicked
+                                          
+        String Tabla = txtTabla.getText();
+        String Predicado = txtPredic.getText();
+        String Resultado = txtTResultante.getText();
+        
+        String Res1 = "∏ " + Predicado + " ("+ Tabla + ") " ;
+        String Res2 = "Select " + Predicado + " From " + Tabla;
+        jTextAlgebra.setText(Res1);
+        jTextSQL.setText(Res2);
+      
+    }//GEN-LAST:event_butComprobarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -211,13 +229,13 @@ public class Op_Proyeccion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Proyeccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Proyeccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Proyeccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Proyeccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

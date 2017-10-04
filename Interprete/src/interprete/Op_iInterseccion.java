@@ -68,6 +68,11 @@ public class Op_iInterseccion extends javax.swing.JFrame {
         jLabel2.setText("Tabla 1");
 
         butComprobar.setText("Generar Consulta");
+        butComprobar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butComprobarActionPerformed(evt);
+            }
+        });
 
         jTextAlgebra.setColumns(20);
         jTextAlgebra.setRows(5);
@@ -195,6 +200,17 @@ public class Op_iInterseccion extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_butSalirActionPerformed
 
+    private void butComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butComprobarActionPerformed
+        String Tabla = txtTabla.getText();
+        String Tabla2 = txtTabla2.getText();
+        String Resultado = txtTResultante.getText();
+        
+        String Res1 = Tabla + " ∩ " + Tabla2;
+        String Res2 = "(Select * From " + Tabla +") INTERSECT (Select * From " + Tabla2 +")" ;
+        jTextAlgebra.setText(Res1);
+        jTextSQL.setText(Res2);
+    }//GEN-LAST:event_butComprobarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -212,13 +228,13 @@ public class Op_iInterseccion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_iInterseccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_iInterseccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_iInterseccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_iInterseccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

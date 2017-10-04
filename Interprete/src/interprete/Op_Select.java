@@ -65,9 +65,21 @@ public class Op_Select extends javax.swing.JFrame {
 
         jLabel1.setText("Predicado");
 
+        txtPredic.setName("Predicado"); // NOI18N
+
         jLabel2.setText("Tabla");
 
         butComprobar.setText("Generar Consulta");
+        butComprobar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butComprobarMouseClicked(evt);
+            }
+        });
+        butComprobar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butComprobarActionPerformed(evt);
+            }
+        });
 
         jTextAlgebra.setColumns(20);
         jTextAlgebra.setRows(5);
@@ -82,6 +94,13 @@ public class Op_Select extends javax.swing.JFrame {
 
         jButton1.setText("Cerrar Sesión");
 
+        txtTabla.setName("Tabla1"); // NOI18N
+        txtTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTablaActionPerformed(evt);
+            }
+        });
+
         jTextSQL.setColumns(20);
         jTextSQL.setRows(5);
         jScrollPane2.setViewportView(jTextSQL);
@@ -95,6 +114,8 @@ public class Op_Select extends javax.swing.JFrame {
         jLabel6.setText("Tabla Resultado");
 
         jLabel7.setText("Tabla resultante");
+
+        txtTResultante.setName("TablaResultado"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +215,26 @@ public class Op_Select extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_butSalirActionPerformed
 
+    private void butComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butComprobarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_butComprobarActionPerformed
+
+    private void txtTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTablaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTablaActionPerformed
+
+    private void butComprobarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butComprobarMouseClicked
+        String Tabla = txtTabla.getText();
+        String Predicado = txtPredic.getText();
+        String Resultado = txtTResultante.getText();
+        
+        String Res1 = "σ " + Predicado + " ("+ Tabla + ") " ;
+        String Res2 = "Select *  From " + Tabla + " where " + Predicado;
+        jTextAlgebra.setText(Res1);
+        jTextSQL.setText(Res2);
+    }//GEN-LAST:event_butComprobarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -211,13 +252,13 @@ public class Op_Select extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Select.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Select.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Select.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Op_Select.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
