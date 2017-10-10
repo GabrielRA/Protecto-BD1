@@ -18,6 +18,7 @@ public class Ad_Borrar extends javax.swing.JFrame {
     
     public Ad_Borrar() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     public String getUsuario (){
@@ -47,6 +48,7 @@ public class Ad_Borrar extends javax.swing.JFrame {
         txtNTabla = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btCrearTabla.setText("Borrar Tabla");
 
@@ -58,6 +60,11 @@ public class Ad_Borrar extends javax.swing.JFrame {
         });
 
         btAcerca.setText("Acerca De");
+        btAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAcercaActionPerformed(evt);
+            }
+        });
 
         btAyuda.setText("Ayuda");
 
@@ -159,6 +166,12 @@ public class Ad_Borrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btSalirActionPerformed
+
+    private void btAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAcercaActionPerformed
+        // TODO add your handling code here:
+        AcercaDe VAcerca = new AcercaDe();
+        VAcerca.setVisible(true);
+    }//GEN-LAST:event_btAcercaActionPerformed
 
     /**
      * @param args the command line arguments

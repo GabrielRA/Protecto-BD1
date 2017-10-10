@@ -18,6 +18,7 @@ public class Ad_Leer extends javax.swing.JFrame {
     
     public Ad_Leer() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     public String getUsuario (){
@@ -49,6 +50,7 @@ public class Ad_Leer extends javax.swing.JFrame {
         butComprobar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         butRegresar.setText("Regresar");
         butRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +60,11 @@ public class Ad_Leer extends javax.swing.JFrame {
         });
 
         butAcerca.setText("Acerca De");
+        butAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAcercaActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Leer");
@@ -211,6 +218,12 @@ public class Ad_Leer extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_butComprobarActionPerformed
+
+    private void butAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAcercaActionPerformed
+        // TODO add your handling code here:
+        AcercaDe VAcerca = new AcercaDe();
+        VAcerca.setVisible(true);
+    }//GEN-LAST:event_butAcercaActionPerformed
 
     /**
      * @param args the command line arguments

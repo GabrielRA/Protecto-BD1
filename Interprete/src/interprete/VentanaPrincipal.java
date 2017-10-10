@@ -22,6 +22,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     public void activar(){
         if("dbaproy1".equals(usuario)){
@@ -60,8 +61,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         butAcerca.setText("Acerca De");
+        butAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAcercaActionPerformed(evt);
+            }
+        });
 
         butAyuda.setText("Ayuda");
 
@@ -223,6 +230,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VMAd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void butAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAcercaActionPerformed
+        // TODO add your handling code here:
+        AcercaDe VAcerca = new AcercaDe();
+        VAcerca.setVisible(true);
+    }//GEN-LAST:event_butAcercaActionPerformed
 
     /**
      * @param args the command line arguments

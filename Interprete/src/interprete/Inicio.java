@@ -17,6 +17,7 @@ public class Inicio extends javax.swing.JFrame {
     String usuario;
     public Inicio() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,9 +38,9 @@ public class Inicio extends javax.swing.JFrame {
         butAyuda = new javax.swing.JButton();
         butSalir = new javax.swing.JButton();
         butIngresar = new javax.swing.JButton();
-        butRegistro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Usuario:");
 
@@ -49,6 +50,11 @@ public class Inicio extends javax.swing.JFrame {
         jLabel3.setText("Iniciar Sesión");
 
         butAcerca.setText("Acerca De");
+        butAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAcercaActionPerformed(evt);
+            }
+        });
 
         butAyuda.setText("Ayuda");
 
@@ -65,8 +71,6 @@ public class Inicio extends javax.swing.JFrame {
                 butIngresarActionPerformed(evt);
             }
         });
-
-        butRegistro.setText("Registrarse");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,14 +93,12 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(butRegistro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(butIngresar))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(textUsuario)
-                                .addComponent(passUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textUsuario)
+                            .addComponent(passUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(butIngresar)))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,9 +119,7 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(passUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butIngresar)
-                    .addComponent(butRegistro))
+                .addComponent(butIngresar)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -156,6 +156,12 @@ public class Inicio extends javax.swing.JFrame {
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_butSalirActionPerformed
+
+    private void butAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAcercaActionPerformed
+        // TODO add your handling code here:
+        AcercaDe VAcerca = new AcercaDe();
+        VAcerca.setVisible(true);
+    }//GEN-LAST:event_butAcercaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,7 +202,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton butAcerca;
     private javax.swing.JButton butAyuda;
     private javax.swing.JButton butIngresar;
-    private javax.swing.JButton butRegistro;
     private javax.swing.JButton butSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

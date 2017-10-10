@@ -20,6 +20,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     
     public MenuAdmin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     public String getUsuario (){
@@ -48,8 +49,10 @@ public class MenuAdmin extends javax.swing.JFrame {
         btActualizar = new javax.swing.JButton();
         btBorrar = new javax.swing.JButton();
         btInterprete = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btSalir.setText("Salir");
         btSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +62,11 @@ public class MenuAdmin extends javax.swing.JFrame {
         });
 
         btAcerca.setText("Acerca De");
+        btAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAcercaActionPerformed(evt);
+            }
+        });
 
         btAyuda.setText("Ayuda");
 
@@ -104,6 +112,9 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Menú Administrador");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,25 +126,19 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btSalir))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btActualizar)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btCerrar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(162, 162, 162)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btLeer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(164, 164, 164)
-                                .addComponent(btBorrar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(btInterprete)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addGap(125, 125, 125)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btLeer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btActualizar)
+                    .addComponent(btBorrar)
+                    .addComponent(btInterprete)
+                    .addComponent(jLabel1))
+                .addGap(117, 117, 117))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btCerrar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +147,9 @@ public class MenuAdmin extends javax.swing.JFrame {
                     .addComponent(btSalir)
                     .addComponent(btAcerca)
                     .addComponent(btAyuda))
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(14, 14, 14)
                 .addComponent(btCrear)
                 .addGap(18, 18, 18)
                 .addComponent(btLeer)
@@ -152,7 +159,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addComponent(btBorrar)
                 .addGap(18, 18, 18)
                 .addComponent(btInterprete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(btCerrar)
                 .addContainerGap())
         );
@@ -213,6 +220,12 @@ public class MenuAdmin extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btInterpreteActionPerformed
 
+    private void btAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAcercaActionPerformed
+        // TODO add your handling code here:
+        AcercaDe VAcerca = new AcercaDe();
+        VAcerca.setVisible(true);
+    }//GEN-LAST:event_btAcercaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,5 +271,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btInterprete;
     private javax.swing.JButton btLeer;
     private javax.swing.JButton btSalir;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
