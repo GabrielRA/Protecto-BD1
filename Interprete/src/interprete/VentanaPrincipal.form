@@ -26,36 +26,31 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="butAcerca" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="butAyuda" min="-2" max="-2" attributes="0"/>
+              <Component id="butAyuda" min="-2" pref="78" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="butSalir" min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="butConsultas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="butTablas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="butCerrar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="butCerrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="butReferencia" max="32767" attributes="0"/>
+                          <Component id="butTablas" max="32767" attributes="0"/>
+                          <Component id="butConsulta" max="32767" attributes="0"/>
+                          <Component id="butTablasTemp" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="butConsulta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,13 +62,17 @@
                   <Component id="butAyuda" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="butSalir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-              <Component id="butTablas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="butConsultas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="butConsulta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="butConsulta" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="butTablas" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="butTablasTemp" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="butReferencia" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
               <Component id="butCerrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -99,12 +98,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butTablasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="butConsultas">
+    <Component class="javax.swing.JButton" name="butReferencia">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Generar Consulta"/>
+        <Property name="text" type="java.lang.String" value="Ver Referencia Cruzada"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butConsultasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butReferenciaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="butSalir">
@@ -125,11 +124,27 @@
     </Component>
     <Component class="javax.swing.JButton" name="butConsulta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar"/>
+        <Property name="text" type="java.lang.String" value="Operaciones"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butConsultaActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butTablasTemp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver Tablas Temporales"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butTablasTempActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="INT&#xc9;RPRETE DE &#xc1;LGEBRA RELACIONAL"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

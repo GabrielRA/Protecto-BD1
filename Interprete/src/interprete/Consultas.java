@@ -31,12 +31,9 @@ public class Consultas extends javax.swing.JFrame {
         butAyuda = new javax.swing.JButton();
         butSeleccionar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        combOperacion = new javax.swing.JComboBox<>();
-        butTempTable = new javax.swing.JButton();
-        butRename = new javax.swing.JButton();
+        combOperacion = new javax.swing.JComboBox<String>();
         butSalir = new javax.swing.JButton();
         butRegresar = new javax.swing.JButton();
-        butCruzada = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -71,10 +68,6 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
 
-        butTempTable.setText("Ver Tablas Temporales");
-
-        butRename.setText("Renombrar");
-
         butSalir.setText("Salir");
         butSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,8 +81,6 @@ public class Consultas extends javax.swing.JFrame {
                 butRegresarActionPerformed(evt);
             }
         });
-
-        butCruzada.setText("Ver Tablas Cruzadas");
 
         jLabel1.setText("Consultas");
 
@@ -127,18 +118,9 @@ public class Consultas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(butRegresar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(butTempTable)
-                                .addGap(18, 18, 18)
-                                .addComponent(butCruzada)
-                                .addGap(18, 18, 18)
-                                .addComponent(butRename))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(191, 191, 191)
+                        .addComponent(jLabel1)
+                        .addGap(0, 207, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,12 +138,7 @@ public class Consultas extends javax.swing.JFrame {
                     .addComponent(combOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butTempTable)
-                    .addComponent(butRename)
-                    .addComponent(butCruzada))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butRegresar)
                     .addComponent(jButton1))
@@ -297,12 +274,9 @@ public class Consultas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAcerca;
     private javax.swing.JButton butAyuda;
-    private javax.swing.JButton butCruzada;
     private javax.swing.JButton butRegresar;
-    private javax.swing.JButton butRename;
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butSeleccionar;
-    private javax.swing.JButton butTempTable;
     private javax.swing.JComboBox<String> combOperacion;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

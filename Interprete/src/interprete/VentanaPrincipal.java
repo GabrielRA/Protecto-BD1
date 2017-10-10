@@ -34,10 +34,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         butAcerca = new javax.swing.JButton();
         butAyuda = new javax.swing.JButton();
         butTablas = new javax.swing.JButton();
-        butConsultas = new javax.swing.JButton();
+        butReferencia = new javax.swing.JButton();
         butSalir = new javax.swing.JButton();
         butCerrar = new javax.swing.JButton();
         butConsulta = new javax.swing.JButton();
+        butTablasTemp = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,10 +54,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        butConsultas.setText("Generar Consulta");
-        butConsultas.addActionListener(new java.awt.event.ActionListener() {
+        butReferencia.setText("Ver Referencia Cruzada");
+        butReferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butConsultasActionPerformed(evt);
+                butReferenciaActionPerformed(evt);
             }
         });
 
@@ -73,12 +75,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        butConsulta.setText("Consultar");
+        butConsulta.setText("Operaciones");
         butConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butConsultaActionPerformed(evt);
             }
         });
+
+        butTablasTemp.setText("Ver Tablas Temporales");
+        butTablasTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butTablasTempActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("INTÉRPRETE DE ÁLGEBRA RELACIONAL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,28 +99,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(butAcerca)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(butAyuda)
+                .addComponent(butAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(butSalir))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 134, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(butConsultas)
-                                .addGap(139, 139, 139))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(butTablas)
-                                .addGap(156, 156, 156))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(butCerrar)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butConsulta)
-                .addGap(155, 155, 155))
+                        .addContainerGap()
+                        .addComponent(butCerrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(butReferencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(butTablas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(butConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(butTablasTemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,13 +126,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(butAcerca)
                     .addComponent(butAyuda)
                     .addComponent(butSalir))
-                .addGap(73, 73, 73)
-                .addComponent(butTablas)
-                .addGap(18, 18, 18)
-                .addComponent(butConsultas)
-                .addGap(18, 18, 18)
-                .addComponent(butConsulta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(butConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(butTablas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(butTablasTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(butReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(butCerrar)
                 .addContainerGap())
         );
@@ -131,9 +144,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void butConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butConsultasActionPerformed
+    private void butReferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butReferenciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_butConsultasActionPerformed
+    }//GEN-LAST:event_butReferenciaActionPerformed
 
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
         // TODO add your handling code here:
@@ -160,6 +173,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VConsulta.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butConsultaActionPerformed
+
+    private void butTablasTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butTablasTempActionPerformed
+
+        TablasTemp FTabla = new TablasTemp();
+        FTabla.setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_butTablasTempActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,8 +221,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton butAyuda;
     private javax.swing.JButton butCerrar;
     private javax.swing.JButton butConsulta;
-    private javax.swing.JButton butConsultas;
+    private javax.swing.JButton butReferencia;
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butTablas;
+    private javax.swing.JButton butTablasTemp;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
