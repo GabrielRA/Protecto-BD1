@@ -5,11 +5,15 @@
  */
 package interprete;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author M Express
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
+    //
 
     /**
      * Creates new form VentanaPrincipal
@@ -137,7 +141,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_butSalirActionPerformed
 
     private void butTablasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butTablasActionPerformed
-        // TODO add your handling code here:
+        
         Tablas FTabla = new Tablas();
         FTabla.setVisible(true);
         this.setVisible(false);

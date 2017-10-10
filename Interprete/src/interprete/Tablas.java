@@ -5,17 +5,21 @@
  */
 package interprete;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author M Express
  */
 public class Tablas extends javax.swing.JFrame {
-
     /**
      * Creates new form Tablas
      */
     public Tablas() {
         initComponents();
+        combTablas.removeAllItems(); 
+        cargarItem(); 
     }
 
     /**
@@ -30,7 +34,7 @@ public class Tablas extends javax.swing.JFrame {
         butAcerca = new javax.swing.JButton();
         butAyuda = new javax.swing.JButton();
         butSalir = new javax.swing.JButton();
-        combTablas = new javax.swing.JComboBox<>();
+        combTablas = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         butRegresar = new javax.swing.JButton();
@@ -49,8 +53,9 @@ public class Tablas extends javax.swing.JFrame {
             }
         });
 
-        combTablas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combTablas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Seleccionar Tabla");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,20 +99,18 @@ public class Tablas extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butRegresar)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(jLabel1))
-                            .addComponent(combTablas, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(136, 136, 136))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(butRegresar)
-                        .addContainerGap())))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(combTablas, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +125,7 @@ public class Tablas extends javax.swing.JFrame {
                 .addComponent(combTablas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butRegresar)
                     .addComponent(jButton1))
@@ -151,6 +154,22 @@ public class Tablas extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed
 
+    private void cargarItem(){
+        String nombreTabla;
+        //this.combTablas.addItem(nombreTabla);       
+        try{
+            Statement consulta =(Statement) Conexion.conn.createStatement();
+            ResultSet tablas = consulta.executeQuery("select name from sysobjects where type='U' AND name NOT IN ('sysdiagrams')");
+            
+            while (tablas.next()){
+                nombreTabla = (String) tablas.getObject("name");
+                this.combTablas.addItem(nombreTabla); 
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Error sql no se pueden leer datos");
+        }
+    } 
     /**
      * @param args the command line arguments
      */

@@ -129,6 +129,7 @@ public class Inicio extends javax.swing.JFrame {
     private void butIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butIngresarActionPerformed
         // TODO add your handling code here:
         String passField = new String(passUsuario.getPassword());
+        System.out.println("CLAVE: " + passField);
         Conexion.setUser(textUsuario.getText(), passField);
         Conexion.cadena_conexion();
         if(Conexion.getStatus()){            
