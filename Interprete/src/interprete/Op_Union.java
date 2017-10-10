@@ -14,8 +14,18 @@ public class Op_Union extends javax.swing.JFrame {
     /**
      * Creates new form Operaciones
      */
+    private String usuario;
+    
     public Op_Union() {
         initComponents();
+    }
+    
+    public String getUsuario (){
+         return usuario;
+    }
+
+    public void setUsuario (String variable){
+        this.usuario = variable;
     }
 
     /**
@@ -232,6 +242,7 @@ public class Op_Union extends javax.swing.JFrame {
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
         Consultas VConsulta = new Consultas();
+        VConsulta.setUsuario(usuario);
         VConsulta.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed

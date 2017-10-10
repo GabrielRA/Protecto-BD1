@@ -14,10 +14,19 @@ public class Ad_Leer extends javax.swing.JFrame {
     /**
      * Creates new form Ad_Leer
      */
+    private String usuario;
+    
     public Ad_Leer() {
         initComponents();
     }
+    
+    public String getUsuario (){
+         return usuario;
+    }
 
+    public void setUsuario (String variable){
+        this.usuario = variable;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,6 +175,7 @@ public class Ad_Leer extends javax.swing.JFrame {
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
         MenuAdmin Vma = new MenuAdmin();
+        Vma.setUsuario(usuario);
         Vma.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed

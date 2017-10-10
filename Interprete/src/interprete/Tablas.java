@@ -16,10 +16,20 @@ public class Tablas extends javax.swing.JFrame {
     /**
      * Creates new form Tablas
      */
+    private String usuario;
+    
     public Tablas() {
         initComponents();
         combTablas.removeAllItems(); 
         cargarItem(); 
+    }
+    
+    public String getUsuario (){
+         return usuario;
+    }
+
+    public void setUsuario (String variable){
+        this.usuario = variable;
     }
 
     /**
@@ -150,6 +160,8 @@ public class Tablas extends javax.swing.JFrame {
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
         VentanaPrincipal VPrincipal = new VentanaPrincipal();
+        VPrincipal.setUsuario(usuario);
+        VPrincipal.activar();
         VPrincipal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed

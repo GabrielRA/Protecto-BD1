@@ -14,8 +14,20 @@ public class MenuAdmin extends javax.swing.JFrame {
     /**
      * Creates new form MenuAdmin
      */
+    private String usuario;
+    
+    
+    
     public MenuAdmin() {
         initComponents();
+    }
+    
+    public String getUsuario (){
+         return usuario;
+    }
+
+    public void setUsuario (String variable){
+        this.usuario = variable;
     }
 
     /**
@@ -35,24 +47,62 @@ public class MenuAdmin extends javax.swing.JFrame {
         btLeer = new javax.swing.JButton();
         btActualizar = new javax.swing.JButton();
         btBorrar = new javax.swing.JButton();
+        btInterprete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btSalir.setText("Salir");
+        btSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalirActionPerformed(evt);
+            }
+        });
 
         btAcerca.setText("Acerca De");
 
         btAyuda.setText("Ayuda");
 
         btCerrar.setText("Cerrar Sesión");
+        btCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCerrarActionPerformed(evt);
+            }
+        });
 
         btCrear.setText("Crear");
+        btCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCrearActionPerformed(evt);
+            }
+        });
 
         btLeer.setText("Leer");
+        btLeer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLeerActionPerformed(evt);
+            }
+        });
 
         btActualizar.setText("Actualizar");
+        btActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btActualizarActionPerformed(evt);
+            }
+        });
 
         btBorrar.setText("Borrar");
+        btBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBorrarActionPerformed(evt);
+            }
+        });
+
+        btInterprete.setText("Interprete");
+        btInterprete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInterpreteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,22 +116,24 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addComponent(btSalir))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btCerrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btActualizar)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btActualizar)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
+                                .addContainerGap()
+                                .addComponent(btCerrar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(162, 162, 162)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btLeer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btBorrar)))))
-                .addContainerGap(167, Short.MAX_VALUE))
+                                .addGap(164, 164, 164)
+                                .addComponent(btBorrar))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(btInterprete)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,21 +142,76 @@ public class MenuAdmin extends javax.swing.JFrame {
                     .addComponent(btSalir)
                     .addComponent(btAcerca)
                     .addComponent(btAyuda))
-                .addGap(60, 60, 60)
+                .addGap(46, 46, 46)
                 .addComponent(btCrear)
                 .addGap(18, 18, 18)
                 .addComponent(btLeer)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btActualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btBorrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btInterprete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(btCerrar)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCrearActionPerformed
+        // TODO add your handling code here:
+        Ad_Crear ventanaCrear= new Ad_Crear();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+        ventanaCrear.setUsuario(usuario);
+        ventanaCrear.setVisible(true); 
+        this.setVisible(false);
+    }//GEN-LAST:event_btCrearActionPerformed
+
+    private void btLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLeerActionPerformed
+        // TODO add your handling code here:
+        Ad_Leer ventanaLeer= new Ad_Leer();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+        ventanaLeer.setUsuario(usuario);
+        ventanaLeer.setVisible(true); 
+        this.setVisible(false);
+    }//GEN-LAST:event_btLeerActionPerformed
+
+    private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
+        // TODO add your handling code here:
+        Ad_Actualizar ventanaActualizar= new Ad_Actualizar();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+        ventanaActualizar.setUsuario(usuario);
+        ventanaActualizar.setVisible(true); 
+        this.setVisible(false);
+    }//GEN-LAST:event_btActualizarActionPerformed
+
+    private void btBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBorrarActionPerformed
+        // TODO add your handling code here:
+        Ad_Borrar ventanaBorrar= new Ad_Borrar();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+        ventanaBorrar.setUsuario(usuario);
+        ventanaBorrar.setVisible(true); 
+        this.setVisible(false);
+    }//GEN-LAST:event_btBorrarActionPerformed
+
+    private void btCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCerrarActionPerformed
+        // TODO add your handling code here:
+        Inicio Vinicio = new Inicio();
+        Vinicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btCerrarActionPerformed
+
+    private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btSalirActionPerformed
+
+    private void btInterpreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInterpreteActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal Vprincipal = new VentanaPrincipal();
+        Vprincipal.setUsuario(this.usuario);
+        Vprincipal.activar();
+        Vprincipal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btInterpreteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,6 +255,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btBorrar;
     private javax.swing.JButton btCerrar;
     private javax.swing.JButton btCrear;
+    private javax.swing.JButton btInterprete;
     private javax.swing.JButton btLeer;
     private javax.swing.JButton btSalir;
     // End of variables declaration//GEN-END:variables

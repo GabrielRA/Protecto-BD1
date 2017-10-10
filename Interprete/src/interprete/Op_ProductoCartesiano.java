@@ -14,10 +14,18 @@ public class Op_ProductoCartesiano extends javax.swing.JFrame {
     /**
      * Creates new form Operaciones
      */
+    private String usuario;
+    
     public Op_ProductoCartesiano() {
         initComponents();
     }
+    public String getUsuario (){
+         return usuario;
+    }
 
+    public void setUsuario (String variable){
+        this.usuario = variable;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -223,6 +231,7 @@ public class Op_ProductoCartesiano extends javax.swing.JFrame {
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
         Consultas VConsulta = new Consultas();
+        VConsulta.setUsuario(usuario);
         VConsulta.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed

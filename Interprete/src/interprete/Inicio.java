@@ -14,6 +14,7 @@ public class Inicio extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
+    String usuario;
     public Inicio() {
         initComponents();
     }
@@ -128,13 +129,25 @@ public class Inicio extends javax.swing.JFrame {
     private void butIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butIngresarActionPerformed
         // TODO add your handling code here:
         String passField = new String(passUsuario.getPassword());
-        System.out.println("CLAVE: " + passField);
         Conexion.setUser(textUsuario.getText(), passField);
         Conexion.cadena_conexion();
-        if(Conexion.getStatus()){            
-            VentanaPrincipal ventana= new VentanaPrincipal();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
-            ventana.setVisible(true);
-            this.setVisible(false);
+        if(Conexion.getStatus()){
+            usuario = textUsuario.getText();
+            
+            if( "dbaproy1".equals(usuario)){
+                MenuAdmin ventanaAD= new MenuAdmin();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+                ventanaAD.setUsuario(this.usuario);
+                ventanaAD.setVisible(true);
+                this.setVisible(false);
+            }
+            else{
+                VentanaPrincipal ventana= new VentanaPrincipal();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+                ventana.setUsuario(this.usuario);
+                ventana.setVisible(true);
+                ventana.activar();
+                this.setVisible(false);
+            }
+            
         }        
         //VentanaPrincipal.setVisible(true); //muestra el segundo jFrame
 

@@ -14,8 +14,18 @@ public class Consultas extends javax.swing.JFrame {
     /**
      * Creates new form Consultas
      */
+    private String usuario;
+    
     public Consultas() {
         initComponents();
+    }
+    
+    public String getUsuario (){
+         return usuario;
+    }
+
+    public void setUsuario (String variable){
+        this.usuario = variable;
     }
 
     /**
@@ -157,61 +167,73 @@ public class Consultas extends javax.swing.JFrame {
         if(combOperacion.getSelectedItem().toString()==""){}
         if(combOperacion.getSelectedItem().toString()=="Select"){
             Op_Select VSelect = new Op_Select();
+            VSelect.setUsuario(usuario);
             VSelect.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Proyección"){
             Op_Proyeccion VProyect = new Op_Proyeccion();
+            VProyect.setUsuario(usuario);
             VProyect.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Unión"){
             Op_Union VUnion = new Op_Union();
+            VUnion.setUsuario(usuario);
             VUnion.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Diferencia de Conjuntos"){
             Op_Diferencia VDiferencia = new Op_Diferencia();
+            VDiferencia.setUsuario(usuario);
             VDiferencia.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Intersección"){
             Op_iInterseccion VInter = new Op_iInterseccion();
+            VInter.setUsuario(usuario);
             VInter.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Division"){
             Op_Division VDivision = new Op_Division();
+            VDivision.setUsuario(usuario);
             VDivision.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Join"){
             Op_Join VJoin = new Op_Join();
+            VJoin.setUsuario(usuario);
             VJoin.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Natural Join"){
             Op_NaturalJoin VNJoin = new Op_NaturalJoin();
+            VNJoin.setUsuario(usuario);
             VNJoin.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Agregación"){
             Op_Agregacion VAgregacion = new Op_Agregacion();
+            VAgregacion.setUsuario(usuario);
             VAgregacion.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Agrupación"){
             Op_Agrupacion VAgrupacion = new Op_Agrupacion();
+            VAgrupacion.setUsuario(usuario);
             VAgrupacion.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Producto Cartesiano"){
             Op_ProductoCartesiano Vpc = new Op_ProductoCartesiano();
+            Vpc.setUsuario(usuario);
             Vpc.setVisible(true);
             this.setVisible(false);
         }
         if(combOperacion.getSelectedItem().toString()=="Renombrar"){
             Op_Renombrar VRenombrar = new Op_Renombrar();
+            VRenombrar.setUsuario(usuario);
             VRenombrar.setVisible(true);
             this.setVisible(false);
         }
@@ -232,6 +254,8 @@ public class Consultas extends javax.swing.JFrame {
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
         VentanaPrincipal VPrincipal = new VentanaPrincipal();
+        VPrincipal.setUsuario(this.usuario);
+        VPrincipal.activar();
         VPrincipal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed

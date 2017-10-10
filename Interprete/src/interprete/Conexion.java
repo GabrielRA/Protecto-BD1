@@ -20,7 +20,7 @@ public class Conexion {
     
     public static Connection cadena_conexion(){
         status = false;
-        String url = "jdbc:sqlserver://localhost;databaseName=AA_ProyectoDB";
+        String url = "jdbc:sqlserver://localhost;databaseName=Banco";
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn=DriverManager.getConnection(url,Conexion.username,Conexion.password);
