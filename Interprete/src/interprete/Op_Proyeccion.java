@@ -81,11 +81,21 @@ public class Op_Proyeccion extends javax.swing.JFrame {
         jLabel3.setText("Algebra Relacional");
 
         butRegresar.setText("Regresar");
+        butRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butRegresarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("PROYECCION");
 
         jButton1.setText("Cerrar Sesión");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextSQL.setColumns(20);
         jTextSQL.setRows(5);
@@ -211,6 +221,20 @@ public class Op_Proyeccion extends javax.swing.JFrame {
         jTextSQL.setText(Res2);
       
     }//GEN-LAST:event_butComprobarMouseClicked
+
+    private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
+        // TODO add your handling code here:
+        Consultas VConsultas = new Consultas();
+        VConsultas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_butRegresarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Inicio Vinicio = new Inicio();
+        Vinicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

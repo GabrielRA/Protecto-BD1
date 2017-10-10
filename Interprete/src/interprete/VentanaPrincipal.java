@@ -63,8 +63,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         butCerrar.setText("Cerrar Sesión");
+        butCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butCerrarActionPerformed(evt);
+            }
+        });
 
         butConsulta.setText("Consultar");
+        butConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butConsultaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,6 +142,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         FTabla.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butTablasActionPerformed
+
+    private void butCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCerrarActionPerformed
+        // TODO add your handling code here:
+        Inicio VInicio = new Inicio();
+        VInicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_butCerrarActionPerformed
+
+    private void butConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butConsultaActionPerformed
+        // TODO add your handling code here:
+        Consultas VConsulta = new Consultas();
+        VConsulta.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_butConsultaActionPerformed
 
     /**
      * @param args the command line arguments

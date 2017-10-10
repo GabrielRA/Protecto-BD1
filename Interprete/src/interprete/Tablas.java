@@ -34,7 +34,6 @@ public class Tablas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         butRegresar = new javax.swing.JButton();
-        butCerrar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,8 +70,6 @@ public class Tablas extends javax.swing.JFrame {
                 butRegresarActionPerformed(evt);
             }
         });
-
-        butCerrar.setText("Cerrar Sesión");
 
         jButton1.setText("Cerrar Sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,11 +108,6 @@ public class Tablas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(butRegresar)
                         .addContainerGap())))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(151, 151, 151)
-                    .addComponent(butCerrar)
-                    .addContainerGap(152, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,11 +127,6 @@ public class Tablas extends javax.swing.JFrame {
                     .addComponent(butRegresar)
                     .addComponent(jButton1))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(148, 148, 148)
-                    .addComponent(butCerrar)
-                    .addContainerGap(149, Short.MAX_VALUE)))
         );
 
         pack();
@@ -147,6 +134,9 @@ public class Tablas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Inicio VInicio = new Inicio();
+        VInicio.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
@@ -156,6 +146,8 @@ public class Tablas extends javax.swing.JFrame {
 
     private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
         // TODO add your handling code here:
+        VentanaPrincipal VPrincipal = new VentanaPrincipal();
+        VPrincipal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_butRegresarActionPerformed
 
@@ -197,7 +189,6 @@ public class Tablas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAcerca;
     private javax.swing.JButton butAyuda;
-    private javax.swing.JButton butCerrar;
     private javax.swing.JButton butRegresar;
     private javax.swing.JButton butSalir;
     private javax.swing.JComboBox<String> combTablas;

@@ -37,7 +37,6 @@ public class Consultas extends javax.swing.JFrame {
         butSalir = new javax.swing.JButton();
         butRegresar = new javax.swing.JButton();
         butCruzada = new javax.swing.JButton();
-        combOperacion1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -65,7 +64,7 @@ public class Consultas extends javax.swing.JFrame {
             .addGap(0, 165, Short.MAX_VALUE)
         );
 
-        combOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Select", "Proyección", "Unión", "Diferencia de Conjuntos", "Intersección", "Division", "Join", "Natural Join", "Agregación", "Agrupación", "Producto Cartesiano" }));
+        combOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Select", "Proyección", "Unión", "Diferencia de Conjuntos", "Intersección", "Division", "Join", "Natural Join", "Agregación", "Agrupación", "Producto Cartesiano", "Renombrar" }));
         combOperacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combOperacionActionPerformed(evt);
@@ -77,21 +76,29 @@ public class Consultas extends javax.swing.JFrame {
         butRename.setText("Renombrar");
 
         butSalir.setText("Salir");
-
-        butRegresar.setText("Regresar");
-
-        butCruzada.setText("Ver Tablas Cruzadas");
-
-        combOperacion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Select", "Proyección", "Unión", "Diferencia de Conjuntos", "Intersección", "Division", "Join", "Natural Join", "Agregación", "Agrupación", "Producto Cartesiano" }));
-        combOperacion1.addActionListener(new java.awt.event.ActionListener() {
+        butSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combOperacion1ActionPerformed(evt);
+                butSalirActionPerformed(evt);
             }
         });
+
+        butRegresar.setText("Regresar");
+        butRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butRegresarActionPerformed(evt);
+            }
+        });
+
+        butCruzada.setText("Ver Tablas Cruzadas");
 
         jLabel1.setText("Consultas");
 
         jButton1.setText("Cerrar Sesión");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,10 +114,8 @@ public class Consultas extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(combOperacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(combOperacion1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(combOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(butSeleccionar)
                         .addGap(56, 56, 56))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -148,8 +153,7 @@ public class Consultas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butSeleccionar)
-                    .addComponent(combOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combOperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
@@ -171,13 +175,89 @@ public class Consultas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_combOperacionActionPerformed
 
-    private void combOperacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combOperacion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combOperacion1ActionPerformed
-
     private void butSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSeleccionarActionPerformed
         // TODO add your handling code here:
+        if(combOperacion.getSelectedItem().toString()==""){}
+        if(combOperacion.getSelectedItem().toString()=="Select"){
+            Op_Select VSelect = new Op_Select();
+            VSelect.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Proyección"){
+            Op_Proyeccion VProyect = new Op_Proyeccion();
+            VProyect.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Unión"){
+            Op_Union VUnion = new Op_Union();
+            VUnion.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Diferencia de Conjuntos"){
+            Op_Diferencia VDiferencia = new Op_Diferencia();
+            VDiferencia.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Intersección"){
+            Op_iInterseccion VInter = new Op_iInterseccion();
+            VInter.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Division"){
+            Op_Division VDivision = new Op_Division();
+            VDivision.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Join"){
+            Op_Join VJoin = new Op_Join();
+            VJoin.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Natural Join"){
+            Op_NaturalJoin VNJoin = new Op_NaturalJoin();
+            VNJoin.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Agregación"){
+            Op_Agregacion VAgregacion = new Op_Agregacion();
+            VAgregacion.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Agrupación"){
+            Op_Agrupacion VAgrupacion = new Op_Agrupacion();
+            VAgrupacion.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Producto Cartesiano"){
+            Op_ProductoCartesiano Vpc = new Op_ProductoCartesiano();
+            Vpc.setVisible(true);
+            this.setVisible(false);
+        }
+        if(combOperacion.getSelectedItem().toString()=="Renombrar"){
+            Op_Renombrar VRenombrar = new Op_Renombrar();
+            VRenombrar.setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_butSeleccionarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Inicio VInicio = new Inicio();
+        VInicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_butSalirActionPerformed
+
+    private void butRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRegresarActionPerformed
+        // TODO add your handling code here:
+        VentanaPrincipal VPrincipal = new VentanaPrincipal();
+        VPrincipal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_butRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,7 +304,6 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JButton butSeleccionar;
     private javax.swing.JButton butTempTable;
     private javax.swing.JComboBox<String> combOperacion;
-    private javax.swing.JComboBox<String> combOperacion1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

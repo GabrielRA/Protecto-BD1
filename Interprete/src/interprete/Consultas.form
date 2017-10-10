@@ -34,10 +34,8 @@
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="combOperacion" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="combOperacion1" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="combOperacion" min="-2" pref="204" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="butSeleccionar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
@@ -88,7 +86,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="butSeleccionar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="combOperacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="combOperacion1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -145,7 +142,7 @@
     <Component class="javax.swing.JComboBox" name="combOperacion">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot; &quot;, &quot;Select&quot;, &quot;Proyecci&#xf3;n&quot;, &quot;Uni&#xf3;n&quot;, &quot;Diferencia de Conjuntos&quot;, &quot;Intersecci&#xf3;n&quot;, &quot;Division&quot;, &quot;Join&quot;, &quot;Natural Join&quot;, &quot;Agregaci&#xf3;n&quot;, &quot;Agrupaci&#xf3;n&quot;, &quot;Producto Cartesiano&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot; &quot;, &quot;Select&quot;, &quot;Proyecci&#xf3;n&quot;, &quot;Uni&#xf3;n&quot;, &quot;Diferencia de Conjuntos&quot;, &quot;Intersecci&#xf3;n&quot;, &quot;Division&quot;, &quot;Join&quot;, &quot;Natural Join&quot;, &quot;Agregaci&#xf3;n&quot;, &quot;Agrupaci&#xf3;n&quot;, &quot;Producto Cartesiano&quot;, &quot;Renombrar&quot; })" type="code"/>
         </Property>
       </Properties>
       <Events>
@@ -169,29 +166,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butSalirActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="butRegresar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Regresar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butRegresarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="butCruzada">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver Tablas Cruzadas"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="combOperacion1">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot; &quot;, &quot;Select&quot;, &quot;Proyecci&#xf3;n&quot;, &quot;Uni&#xf3;n&quot;, &quot;Diferencia de Conjuntos&quot;, &quot;Intersecci&#xf3;n&quot;, &quot;Division&quot;, &quot;Join&quot;, &quot;Natural Join&quot;, &quot;Agregaci&#xf3;n&quot;, &quot;Agrupaci&#xf3;n&quot;, &quot;Producto Cartesiano&quot; })" type="code"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combOperacion1ActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -202,6 +192,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
