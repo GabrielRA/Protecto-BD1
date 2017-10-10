@@ -7,4 +7,7 @@ https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
 
 https://www.adictosaltrabajo.com/tutoriales/tutorial-basico-jdbc/
 
-es una prueba
+Expresiones Regulares:
+http://programacion.net/articulo/expresiones_regulares_en_java_127
+
+http://puntocomnoesunlenguaje.blogspot.com/2013/07/ejemplos-expresiones-regulares-java-split.html
