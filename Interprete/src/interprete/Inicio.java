@@ -128,11 +128,16 @@ public class Inicio extends javax.swing.JFrame {
 
     private void butIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butIngresarActionPerformed
         // TODO add your handling code here:
-        VentanaPrincipal ventana= new VentanaPrincipal();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
-        ventana.setVisible(true);
+        String passField = new String(passUsuario.getPassword());
+        Conexion.setUser(textUsuario.getText(), passField);
+        Conexion.cadena_conexion();
+        if(Conexion.getStatus()){            
+            VentanaPrincipal ventana= new VentanaPrincipal();//"jFrame2" Tu colocas el nombre que le hayas puesto a tu segundo jFrame 
+            ventana.setVisible(true);
+            this.setVisible(false);
+        }        
         //VentanaPrincipal.setVisible(true); //muestra el segundo jFrame
 
-        this.setVisible(false);
     }//GEN-LAST:event_butIngresarActionPerformed
 
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed

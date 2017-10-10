@@ -6,20 +6,38 @@
 package interprete;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author M Express
  */
 public class Conexion {
+    static Connection conn = null;
+    public static String username;
+    public static String password;
+    public static boolean status;
     
-    public Connection cadena_conexion(){
-        Connection cn=null;
+    public static Connection cadena_conexion(){
+        status = false;
+        String url = "jdbc:sqlserver://localhost;databaseName=AA_ProyectoDB";
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            cn=DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=bdproy1","user","1234");
-        }catch (Exception e){}
-        return cn;
+            conn=DriverManager.getConnection(url,Conexion.username,Conexion.password);
+            status = true; 
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "No se puede conectar..." + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        return conn;
+    }
+    
+    public static void setUser(String user, String pass){
+        Conexion.username = user;
+        Conexion.password = pass;
+    }
+    
+    public static boolean getStatus(){
+        return status;
     }
     
 }
