@@ -5,6 +5,10 @@
  */
 package interprete;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author M Express
@@ -149,7 +153,7 @@ public class Op_Select extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "", "", "", ""
             }
         ));
         jScrollPane4.setViewportView(jtQuery);
@@ -257,7 +261,105 @@ public class Op_Select extends javax.swing.JFrame {
     }//GEN-LAST:event_butSalirActionPerformed
 
     private void butComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butComprobarActionPerformed
-        // TODO add your handling code here:
+
+         boolean statusTabla = true;//guarda la validacion de la Tabla
+        boolean statusPredicado = true;//guarda la validacion del Predicado
+        String Tabla = txtTabla.getText();
+        String Predicado = txtPredic.getText();
+        String Resultado = txtTResultante.getText();
+        String Res1, consulta, nombreTabla;
+        if (statusTabla){
+            if (statusPredicado){
+                if(txtPredic.getText().isEmpty()){
+                    if(txtTResultante.getText().isEmpty()){
+                        Res1 = "σ " + " ("+ Tabla + ") " ;
+                        consulta = "Select *  From " + Tabla;
+                        nombreTabla = Tabla;
+                    }else{
+                        Res1 = "σ " + " ("+ Tabla + ") " ;
+                        consulta = "Select *  INTO #" + Resultado + " From " + Tabla;
+                        nombreTabla = Resultado;
+                    }                    
+                    try {
+                        //Para establecer el modelo al JTable
+                       DefaultTableModel modelo = new DefaultTableModel();
+                       this.jtQuery.setModel(modelo);
+                       //Para ejecutar la consulta
+                       Statement s = Conexion.conn.createStatement();
+                       //Ejecutamos la consulta
+                       ResultSet rs = s.executeQuery(consulta);
+                       //Obteniendo la informacion de las columnas que estan siendo consultadas
+                       ResultSetMetaData rsMd = rs.getMetaData();
+                       int cantidadColumnas = rsMd.getColumnCount();
+                       //Establecer cabezeras el nombre de las columnas
+                       for (int i = 1; i <= cantidadColumnas; i++) {
+                        modelo.addColumn(rsMd.getColumnLabel(i));
+                       }
+                       //Creando las filas para el JTable
+                       while (rs.next()) {
+                        Object[] fila = new Object[cantidadColumnas];
+                        for (int i = 0; i < cantidadColumnas; i++) {
+                          fila[i]=rs.getObject(i+1);
+                        }
+                        modelo.addRow(fila);
+                       }
+                       rs.close();
+                       jTextAlgebra.setText(Res1);
+                       jTextSQL.setText(consulta);
+                       txtTableName.setText(nombreTabla);
+                      } catch (Exception ex) {
+                       ex.printStackTrace();
+                    }  
+                }else{
+                    if(txtPredic.getText().isEmpty()){
+                        if(txtTResultante.getText().isEmpty()){
+                            Res1 = "σ " + " ("+ Tabla + ") " ;
+                            consulta = "Select *  From " + Tabla + " where " + Predicado;
+                            nombreTabla = Tabla;
+                        }else{
+                            Res1 = "σ " + " ("+ Tabla + ") " ;
+                            consulta = "Select *  INTO #" + Resultado + " From " + Tabla + " where " + Predicado;
+                            nombreTabla = Resultado;
+                        }                    
+                        try {
+                            //Para establecer el modelo al JTable
+                           DefaultTableModel modelo = new DefaultTableModel();
+                           this.jtQuery.setModel(modelo);
+                           //Para ejecutar la consulta
+                           Statement s = Conexion.conn.createStatement();
+                           //Ejecutamos la consulta
+                           ResultSet rs = s.executeQuery(consulta);
+                           //Obteniendo la informacion de las columnas que estan siendo consultadas
+                           ResultSetMetaData rsMd = rs.getMetaData();
+                           int cantidadColumnas = rsMd.getColumnCount();
+                           //Establecer cabezeras el nombre de las columnas
+                           for (int i = 1; i <= cantidadColumnas; i++) {
+                            modelo.addColumn(rsMd.getColumnLabel(i));
+                           }
+                           //Creando las filas para el JTable
+                           while (rs.next()) {
+                            Object[] fila = new Object[cantidadColumnas];
+                            for (int i = 0; i < cantidadColumnas; i++) {
+                              fila[i]=rs.getObject(i+1);
+                            }
+                            modelo.addRow(fila);
+                           }
+                           rs.close();
+                           jTextAlgebra.setText(Res1);
+                           jTextSQL.setText(consulta);
+                           txtTableName.setText(nombreTabla);
+                          } catch (Exception ex) {
+                           ex.printStackTrace();
+                        }  
+                    }
+                }                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Predicado Incorrecto: " + Predicado, " ERROR ", JOptionPane.ERROR_MESSAGE);;
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "No existe la Tabla: " + Tabla, " ERROR ", JOptionPane.ERROR_MESSAGE);;
+        }// TODO add your handling code here:
         
     }//GEN-LAST:event_butComprobarActionPerformed
 
